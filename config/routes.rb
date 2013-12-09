@@ -6,7 +6,9 @@ EcommerceWebsite::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root to: => 'core#index'
+  root :to => "core#index"
+  match '\product', :to => "orders_controller#index", via: :get
+  match '\order', :to => "products_controller#index", via: :get
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
